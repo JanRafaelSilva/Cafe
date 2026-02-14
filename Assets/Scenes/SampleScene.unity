@@ -409,6 +409,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d94b4265cc6424595c77d9e2e61b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Camera
+  player: {fileID: 572648428}
+  velocity: {x: 0, y: 0, z: 0}
+  smoothTime: 0.2
+>>>>>>> Stashed changes
 --- !u!1 &572648428
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +461,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   movimento: {x: 0, y: 0}
+<<<<<<< Updated upstream
   velocidade: 10
+=======
+  velocidade: 5
+  velMax: 5
+>>>>>>> Stashed changes
 --- !u!114 &572648430
 MonoBehaviour:
   m_ObjectHideFlags: 0
