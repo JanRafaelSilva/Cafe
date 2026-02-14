@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< Updated upstream
   tags: []
+=======
+  tags:
+  - Floor
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -41,8 +46,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
   - name: Player
     uniqueID: 1126116475
     locked: 0
+=======
+>>>>>>> Stashed changes
   m_RenderingLayers:
   - Default
