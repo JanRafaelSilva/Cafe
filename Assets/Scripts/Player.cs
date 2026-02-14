@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public Vector2 movimento;
 
     public float velocidade = 5f;
-    public float velMax = 1f;
+    public float velMax = 5f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

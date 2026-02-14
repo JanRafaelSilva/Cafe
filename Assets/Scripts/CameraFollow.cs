@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
     Vector3 offset = new Vector3 (0,2,-10);
     public Vector3 velocity;
-    public float smoothTime;
+    public float smoothTime = 0.2f;
 
     void Start()
     {

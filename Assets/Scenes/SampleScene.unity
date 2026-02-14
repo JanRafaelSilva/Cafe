@@ -603,7 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Camera
   player: {fileID: 572648428}
   velocity: {x: 0, y: 0, z: 0}
-  smoothTime: 0.3
+  smoothTime: 0.2
 --- !u!1 &572648428
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   movimento: {x: 0, y: 0}
   velocidade: 5
-  velMax: 1
+  velMax: 5
 --- !u!114 &572648430
 MonoBehaviour:
   m_ObjectHideFlags: 0
