@@ -12,18 +12,12 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    void FixedUpdate()
-    {
-        Movimento();
-    }
-
     public void SetMovimento(InputAction.CallbackContext context)
     {
         movimento = context.ReadValue<Vector2>();
     }
 
-    void FixedUpdate()
+    void FixedUpdate()  
     {
         rb.AddForce(movimento * velocidade);
         rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, velMax);
