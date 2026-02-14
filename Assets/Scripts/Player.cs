@@ -22,10 +22,10 @@ public class Player : MonoBehaviour
     {
         movimento = context.ReadValue<Vector2>();
     }
-    public void Movimento()
+
+    void FixedUpdate()
     {
         rb.AddForce(movimento * velocidade);
-
         rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, velMax);
     }
 }
