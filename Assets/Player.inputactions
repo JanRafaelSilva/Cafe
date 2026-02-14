@@ -29,17 +29,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "1089462e-2d70-416e-8882-66a97366d421",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimentação",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
                     "id": "df736c9d-675a-41bf-9bb2-219fb162645b",
                     "path": "<Keyboard>/a",
