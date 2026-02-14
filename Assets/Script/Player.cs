@@ -20,9 +20,9 @@ public class Player : MonoBehaviour
     }
     public void Movimento()
     {
-        rb.linearVelocity = new Vector2(movimento.x * velocidade * Time.fixedDeltaTime, movimento.y);
+        rb.linearVelocity = new Vector2(movimento.x * velocidade * Time.fixedDeltaTime,0);
     }
-    void FixidUpdate()
+    void FixedUpdate()
     {
          Movimento();
     }
