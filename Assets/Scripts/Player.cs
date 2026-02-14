@@ -1,29 +1,31 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using System.IO.Compression;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     public Vector2 movimento;
-    public float velocidade = 10f;
+
+    public float velocidade = 5f;
+    public float velMax = 1f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    void FixedUpdate()
+    {
+        Movimento();
+    }
+
     public void SetMovimento(InputAction.CallbackContext context)
     {
         movimento = context.ReadValue<Vector2>();
     }
     public void Movimento()
     {
-        rb.linearVelocity = new Vector2(movimento.x * velocidade * Time.fixedDeltaTime, movimento.y);
-    }
-    void FixidUpdate()
-    {
-         Movimento();
+        rb.AddForce(movimento * velocidade);
+
+        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, velMax);
     }
 }
