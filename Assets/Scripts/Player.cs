@@ -52,7 +52,10 @@ public class Player : MonoBehaviour
 
     public void SetBroca(InputAction.CallbackContext context)
     {
-        broca = true;
+        if (context.started)
+        {
+            broca = true;
+        }
     }
 
     void Movimento()
