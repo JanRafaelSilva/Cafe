@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class InChaleira : MonoBehaviour
+public class InChaleira : MonoBehaviour, IDamageable
 {
     public Transform DetectaChao;//Avaliar se a chão a frente
     public Transform Parede;//Avaliar se a chão a frente
@@ -151,5 +151,20 @@ public class InChaleira : MonoBehaviour
     public void controleVida(int quantidade)
     {
         vida = vida + quantidade;
+    }
+
+    public void TomarDano(int quantidade)
+    {
+        vida -= quantidade;
+
+        if (vida <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

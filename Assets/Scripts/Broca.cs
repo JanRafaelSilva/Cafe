@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Broca : MonoBehaviour
 {
-    public int dano = 1;
+    public int dano = 50;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {//colocar tag do inimigo    VV
-        if (collision.CompareTag(""))
+    {
+        IDamageable objetoDano = collision.GetComponent<IDamageable>();
+
+        if (objetoDano != null)
         {
-            //fazer inimigo tomar dano
+            objetoDano.TomarDano(dano);
         }
     }
 }

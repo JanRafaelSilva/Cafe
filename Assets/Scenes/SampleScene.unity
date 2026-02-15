@@ -1088,7 +1088,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1126116475
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -1659,6 +1659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1024605832}
   - component: {fileID: 1024605831}
+  - component: {fileID: 1024605833}
   m_Layer: 8
   m_Name: Broca Hitbox
   m_TagString: Untagged
@@ -1727,6 +1728,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 572648434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024605833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024605830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b773ab69c52185441804a54c9d1c453a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Broca
+  dano: 50
 --- !u!1 &1773806282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,6 +1962,10 @@ PrefabInstance:
     - target: {fileID: 2758011981205269537, guid: 6124c48f4642a964fb56c57821a48f5c, type: 3}
       propertyPath: m_Name
       value: InChicara
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758011981205269537, guid: 6124c48f4642a964fb56c57821a48f5c, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3478621984310926757, guid: 6124c48f4642a964fb56c57821a48f5c, type: 3}
       propertyPath: m_LocalPosition.x
