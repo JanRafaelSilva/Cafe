@@ -8,7 +8,11 @@ public class Player : MonoBehaviour
 
     public bool isGrounded;
 
-    public float velocidade = 5f;
+    public bool MK1 = true;
+    public bool MK2 = false;
+    public bool MK3 = false;
+
+    public float velocidade = 5f;
     public float velMax = 5f;
     public float puloForce = 5f;
     public float controleNoAr = 0.2f;
@@ -58,7 +62,69 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Movimento()
+    public void SetMarchaQ(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (MK1 == true)
+            {
+                MK3 = true;
+                MK1 = false;
+
+                anim.SetBool("MK3", true);
+                anim.SetBool("MK1", false);
+            }
+            else if (MK2 == true)
+            {
+                MK1 = true;
+                MK2 = false;
+
+                anim.SetBool("MK1", true);
+                anim.SetBool("MK2", false);
+            }
+            else if (MK3 == true)
+            {
+                MK2 = true;
+                MK3 = false;
+
+                anim.SetBool("MK2", true);
+                anim.SetBool("MK3", false);
+            }
+        }
+    }
+
+    public void SetMarchaE(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (MK1 == true)
+            {
+                MK2 = true;
+                MK1 = false;
+
+                anim.SetBool("MK2", true);
+                anim.SetBool("MK1", false);
+            }
+            else if (MK2 == true)
+            {
+                MK3 = true;
+                MK2 = false;
+
+                anim.SetBool("MK3", true);
+                anim.SetBool("MK2", false);
+            }
+            else if (MK3 == true)
+            {
+                MK1 = true;
+                MK3 = false;
+
+                anim.SetBool("MK1", true);
+                anim.SetBool("MK3", false);
+            }
+        }
+    }
+
+    void Movimento()
     {
         float forcaFinal = isGrounded ? velocidade : (velocidade * controleNoAr);
 
@@ -122,9 +188,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Floor"))
+        if (collision.CompareTag("Floor") || collision.CompareTag("Enemy"))
         {
             isGrounded = true;
         }
@@ -132,7 +198,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Floor"))
+        if (collision.CompareTag("Floor") || collision.CompareTag("Enemy"))
         {
             isGrounded = false;
         }

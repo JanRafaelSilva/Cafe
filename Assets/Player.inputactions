@@ -41,6 +41,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TrocarMarchaQ",
+                    "type": "Button",
+                    "id": "89607ac6-9d7b-44ab-9b08-c2ea0fcf053c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrocarMarchaE",
+                    "type": "Button",
+                    "id": "8e95cd13-d7c2-4048-9ea3-b00e2e34ee21",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -107,6 +125,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Broca",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94fe3138-e6d1-40a7-a095-261b234c5994",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrocarMarchaQ",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db4688f0-5e0a-4259-965b-8a834219eb19",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrocarMarchaE",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

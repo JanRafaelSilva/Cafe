@@ -927,6 +927,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   movimento: {x: 0, y: 0}
   isGrounded: 1
+  MK1: 1
+  MK2: 0
+  MK3: 0
   velocidade: 10
   velMax: 5
   puloForce: 5
@@ -1011,6 +1014,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: da681d75-4da5-4cef-88c3-0c3561691b4b
     m_ActionName: 'Player/Broca[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 572648429}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SetMarchaQ
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 89607ac6-9d7b-44ab-9b08-c2ea0fcf053c
+    m_ActionName: 'Player/TrocarMarcha[/Keyboard/q,/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 572648429}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SetMarchaE
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8e95cd13-d7c2-4048-9ea3-b00e2e34ee21
+    m_ActionName: 'Player/TrocarMarchaE[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1097,7 +1132,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.26, y: 0.29}
+  m_Size: {x: 0.27, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1158,7 +1193,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.26, y: 0.29}
+    newSize: {x: 0.27, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1226,7 +1261,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 0.26, y: 0.29}
+    newSize: {x: 0.27, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
