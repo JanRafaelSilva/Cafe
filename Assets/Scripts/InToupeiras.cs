@@ -10,10 +10,13 @@ public class InToupeiras : MonoBehaviour
     public float x;
     public float y;
     public int vida = 20;
+    Animator anima;
+    public bool atacando = false;
     public void Awake()
     {
         my = GetComponent<Transform>();
         angulo = transform.rotation.eulerAngles.z;
+        anima = GetComponent<Animator>();
     }
     public void Start()
     {
@@ -37,6 +40,13 @@ public class InToupeiras : MonoBehaviour
     public void Update()
     {
         Raycasting();
+        if (spot)
+        {
+            anima.SetBool("Atacando", false);
+            anima.SetBool("Ativado", true);
+            anima.SetBool("Escondido", false);
+            atacando = true;
+        }
     }
     public void Raycasting(){
         Debug.DrawLine(this.transform.position, new Vector2(transform.position.x + x, transform.position.y + y), Color.green);
@@ -50,7 +60,13 @@ public class InToupeiras : MonoBehaviour
             var controle = collision.gameObject.GetComponent<Player>();
             if (controle != null)
             {
-              //  controle.controleCafe(-5);
+                //  controle.controleCafe(-5);
+                if (atacando == true)
+                {
+                    anima.SetBool("Atacando", true);
+                    anima.SetBool("Ativado", true);
+                    anima.SetBool("Escondido", false);
+                }
             }
         }
     }

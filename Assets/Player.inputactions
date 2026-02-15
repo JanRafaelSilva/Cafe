@@ -16,15 +16,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LuzTest",
-                    "type": "Button",
-                    "id": "3d37bc9f-72e8-47cf-991c-97a9e8b8558d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pulo",
                     "type": "Button",
                     "id": "97f8e0a1-d600-4e6c-ab73-804777af057b",
@@ -76,17 +67,6 @@
                     "action": "Movimentação",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "1ba2172e-28a2-4568-bbe1-770b6db868af",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LuzTest",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
