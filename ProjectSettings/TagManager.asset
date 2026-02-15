@@ -4,13 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-<<<<<<< Updated upstream
-  - Player
-  - Ground
-  - Wall
-=======
   - Floor
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -18,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Wall
+  - Player
   - 
   - 
   - 

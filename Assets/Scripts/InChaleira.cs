@@ -9,7 +9,7 @@ public class InChaleira : MonoBehaviour
     public float distancia = 3;// tamanho do raio do Raycast
     public bool olhandoParaDireita;// irá verificar para qual lado o nosso inimigo está olhando
     float velocidade = 1f;// irá definir a velocidade em que o nosso inimigo irá se movimentar
-    float velocidadePerseguicao = 5f;// 
+    float velocidadePerseguicao = 3f;// 
 
     public bool spot = false; //booleana para saber se o jogador esta dentro do campo de visão
     public bool spot2 = false; //booleana para saber se o jogador esta dentro do campo de visão
@@ -127,13 +127,13 @@ public class InChaleira : MonoBehaviour
             atacando = false;
             velocidade = 1f;
         }
-        if (spot3)
+        /*if (spot3)
         {
             atacando = true;
             //MuAnim.SetBool("Correndo", false);
             //MuAnim.SetBool("Andando", false);
             //MuAnim.SetBool("Atacando", true);
-        }
+        }*/
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
