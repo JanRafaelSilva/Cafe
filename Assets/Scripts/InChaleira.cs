@@ -148,14 +148,10 @@ public class InChaleira : MonoBehaviour, IDamageable
             }
         }
     }
-    public void controleVida(int quantidade)
-    {
-        vida = vida + quantidade;
-    }
 
     public void TomarDano(int quantidade)
     {
-        vida -= quantidade;
+        vida += quantidade;
 
         if (vida <= 0)
         {

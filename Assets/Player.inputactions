@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Fogo",
+                    "type": "Button",
+                    "id": "b6b9577c-f8ae-4063-bf07-d5f98981f871",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -127,6 +136,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TrocarMarchaE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43e44cc5-a257-4ad9-8e9e-121a7cadad2b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fogo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

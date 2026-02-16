@@ -191,7 +191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projetil
   rigid: {fileID: 0}
-  force: 3
+  force: 5
+  b: 1
+  dano: -100
 --- !u!58 &-1135696281493243908
 CircleCollider2D:
   m_ObjectHideFlags: 0

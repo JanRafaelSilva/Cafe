@@ -17,11 +17,13 @@ public class Player : MonoBehaviour
     public float puloForce = 5f;
     public float controleNoAr = 0.2f;
     public float frenagem = 10f;
+    Vector3 scale;
 
-    Animator anim;
+    Animator anim;
 
     public GameObject brocaHB;
     public bool broca;
+    public GameObject tiroFg;
     
 
     private void Awake()
@@ -44,8 +46,19 @@ public class Player : MonoBehaviour
     {
         movimento = context.ReadValue<Vector2>();
     }
+    public void SetFogo(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            scale = transform.localScale;
+            int a = scale.x > 0 ? 1 : -1;
+            var controle = tiroFg.GetComponent<Projetil>();
+            controle.direcao(a);
+            Instantiate(tiroFg, new Vector3(transform.position.x + a, transform.position.y), Quaternion.identity);
+        }
+    }
 
-    public void SetPulo(InputAction.CallbackContext context)
+  public void SetPulo(InputAction.CallbackContext context)
     {
         if (context.started && isGrounded)
         {
