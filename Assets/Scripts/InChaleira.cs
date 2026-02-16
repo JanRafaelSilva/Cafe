@@ -21,6 +21,7 @@ public class InChaleira : MonoBehaviour, IDamageable
     private Animator MuAnim;
     bool atacando;
     public float vida = 75;
+    public GameObject spawn;
     void Start()
     {
         olhandoParaDireita = true; // vai começar olhando para direita
@@ -162,5 +163,7 @@ public class InChaleira : MonoBehaviour, IDamageable
     void Die()
     {
         Destroy(gameObject);
+        var controle = spawn.gameObject.GetComponent<SpawnChaleira>();
+        controle.spawn = true;
     }
 }

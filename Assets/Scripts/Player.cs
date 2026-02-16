@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public GameObject brocaHB;
     public bool broca;
     public GameObject tiroFg;
+    public float tempo;
+    public bool fogo = true;
     
 
     private void Awake()
@@ -35,7 +37,17 @@ public class Player : MonoBehaviour
     {
         HandleAnimation();
         HandleFlip();
-    }
+        if (fogo == false)
+        {
+            tempo += Time.deltaTime;
+            if(tempo >= 1f)
+            {
+                
+                fogo = true;
+                tempo = 0;
+            }
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -50,11 +62,15 @@ public class Player : MonoBehaviour
     {
         if (context.started)
         {
-            scale = transform.localScale;
-            int a = scale.x > 0 ? 1 : -1;
-            var controle = tiroFg.GetComponent<Projetil>();
-            controle.direcao(a);
-            Instantiate(tiroFg, new Vector3(transform.position.x + a, transform.position.y), Quaternion.identity);
+            if (fogo)
+            {
+                scale = transform.localScale;
+                int a = scale.x > 0 ? 1 : -1;
+                var controle = tiroFg.GetComponent<Projetil>();
+                controle.direcao(a);
+                Instantiate(tiroFg, new Vector3(transform.position.x + a, transform.position.y), Quaternion.identity);
+                fogo = false;
+            }
         }
     }
 

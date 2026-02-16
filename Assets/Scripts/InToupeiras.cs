@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Video;
@@ -6,12 +7,13 @@ public class InToupeiras : MonoBehaviour
 {
     public bool spot;
     public Transform my;
-    float angulo = 0;
+    float angulo = 180;
     public float x;
     public float y;
     public int vida = 20;
     Animator anima;
     public bool atacando = false;
+    public GameObject spawn;
     public void Awake()
     {
         my = GetComponent<Transform>();
@@ -20,6 +22,7 @@ public class InToupeiras : MonoBehaviour
     }
     public void Start()
     {
+        my.transform.rotation = Quaternion.Euler(0, 0, 180);
         //my.rotation = Quaternion.Euler(0, 0, angulo);
         switch (angulo)
         {
@@ -47,10 +50,16 @@ public class InToupeiras : MonoBehaviour
             anima.SetBool("Escondido", false);
             atacando = true;
         }
+        if(vida <= 0)
+        {
+            Destroy(gameObject);
+            var controle = spawn.gameObject.GetComponent<SpawnToupeira>();
+            controle.spawn = true;
+        }
     }
     public void Raycasting(){
-        Debug.DrawLine(this.transform.position, new Vector2(transform.position.x + x, transform.position.y + y), Color.green);
-        spot = Physics2D.Linecast(this.transform.position, new Vector2(transform.position.x + x, transform.position.y + y), 1 << LayerMask.NameToLayer("Player"));
+        Debug.DrawLine(this.transform.position, new Vector2(transform.position.x + x, transform.position.y + -3), Color.green);
+        spot = Physics2D.Linecast(this.transform.position, new Vector2(transform.position.x + x, transform.position.y + -3), 1 << LayerMask.NameToLayer("Player"));
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

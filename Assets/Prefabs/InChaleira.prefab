@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 518160952498688370}
   - component: {fileID: 4047666937988405275}
   m_Layer: 0
-  m_Name: InChicara
+  m_Name: InChaleira
   m_TagString: Chaleira
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
