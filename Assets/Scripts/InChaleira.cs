@@ -152,7 +152,7 @@ public class InChaleira : MonoBehaviour, IDamageable
 
     public void TomarDano(int quantidade)
     {
-        vida += quantidade;
+        vida -= quantidade;
 
         if (vida <= 0)
         {

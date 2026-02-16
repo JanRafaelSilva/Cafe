@@ -155,7 +155,27 @@ public class Player : MonoBehaviour
 
     void Movimento()
     {
-        float forcaFinal = isGrounded ? velocidade : (velocidade * controleNoAr);
+        if (MK1)
+        {
+            velocidade = 10f;
+            velMax = 5f;
+            puloForce = 7f;
+        }
+        else if (MK2)
+        {
+            velocidade = 12;
+            velMax = 6;
+            puloForce = 8.5f;
+        }
+        else if (MK3)
+        {
+            velocidade = 14;
+            velMax = 7;
+            puloForce = 9.5f;
+        }
+
+
+        float forcaFinal = isGrounded ? velocidade : (velocidade * controleNoAr);
 
         if (movimento.x != 0)
         {
