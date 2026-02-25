@@ -22,11 +22,14 @@ public class InChaleira : MonoBehaviour, IDamageable
     bool atacando;
     public float vida = 75;
     public GameObject spawn;
+    public bool pode = true;
+   
     void Start()
     {
         olhandoParaDireita = true; // vai começar olhando para direita
         Player = GameObject.FindGameObjectWithTag("Player");
         MuAnim = GetComponent<Animator>();
+        spawn = GameObject.FindGameObjectWithTag("Spawn");
     }
 
 
@@ -156,6 +159,9 @@ public class InChaleira : MonoBehaviour, IDamageable
 
         if (vida <= 0)
         {
+            var controle = spawn.gameObject.GetComponent<SpawnChaleira>();
+            controle.trueSpawn(pode);
+            Debug.Log("passou o true");
             Die();
         }
     }
@@ -163,7 +169,5 @@ public class InChaleira : MonoBehaviour, IDamageable
     void Die()
     {
         Destroy(gameObject);
-        var controle = spawn.gameObject.GetComponent<SpawnChaleira>();
-        controle.spawn = true;
     }
 }

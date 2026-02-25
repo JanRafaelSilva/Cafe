@@ -211,6 +211,8 @@ MonoBehaviour:
   fimCP: {fileID: 2492954049911841255}
   fimCP2: {fileID: 6145883325403375868}
   vida: 75
+  spawn: {fileID: 2585495008873370776, guid: e0c7c08cf2b44164888c0211f1c6b94d, type: 3}
+  pode: 1
 --- !u!61 &518160952498688370
 BoxCollider2D:
   m_ObjectHideFlags: 0

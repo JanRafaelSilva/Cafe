@@ -13,16 +13,10 @@ public class Placar : MonoBehaviour
     public int points = 0;
     public int pontosTime;
     public float time = 60f;
-    public Light2D luz;
-    [SerializeField] private float rangeIncrease;
-    [SerializeField] private float minRange = 3f;
-    [SerializeField] private float maxRangeOuter = 8f;
-    [SerializeField] private float maxRangeInner = 24.5f;
 
     void Awake()
     {
         player = GetComponent<Player>();
-        luz = GetComponent<UnityEngine.Rendering.Universal.Light2D>();
     }
     private void Update()
     {
@@ -33,21 +27,6 @@ public class Placar : MonoBehaviour
             pontosTime = 0;
         }
         
-    }
-    public void queimaCafe(float tempo)
-    {
-        if(tempo == 4f) {
-            rangeIncrease = 0.15f;
-            luz.pointLightOuterRadius = Mathf.Clamp(luz.pointLightOuterRadius + rangeIncrease, minRange, maxRangeOuter);
-        }
-        if(tempo == 2f) {
-            rangeIncrease = 0.10f;
-            luz.pointLightOuterRadius = Mathf.Clamp(luz.pointLightOuterRadius + rangeIncrease, minRange, maxRangeOuter);
-        }
-        if(tempo == 1f) {
-            rangeIncrease = 0.05f;
-            luz.pointLightOuterRadius = Mathf.Clamp(luz.pointLightOuterRadius + rangeIncrease, minRange, maxRangeOuter);
-        }
     }
     public void coletaCafe()
     {

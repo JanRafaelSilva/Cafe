@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
+
 
 public class Player : MonoBehaviour
 {
@@ -26,15 +28,35 @@ public class Player : MonoBehaviour
     public GameObject tiroFg;
     public float tempo;
     public bool fogo = true;
-    
+    public GameObject Placar;
+    public GameObject luz;
+    public GameObject tocha;
+    public int Ntochas;
 
-    private void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    }
+        
+    }
     private void Update()
     {
+        if (MK1 || MK2 || MK3)
+        {
+            var controle = luz.gameObject.GetComponent<luz>();
+            if (MK1 == true)
+            {
+                controle.Luz(1);
+            }
+            if (MK2 == true)
+            {
+                controle.Luz(2);
+            }
+            if (MK3 == true)
+            {
+                controle.Luz(3);
+            }
+        }
         HandleAnimation();
         HandleFlip();
         if (fogo == false)
@@ -52,6 +74,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Movimento();
+        
     }
 
     public void SetMovimento(InputAction.CallbackContext context)
@@ -90,7 +113,18 @@ public class Player : MonoBehaviour
             broca = true;
         }
     }
-
+    public void SetTocha(InputAction.CallbackContext context)
+    {
+        scale = transform.localScale;
+        int a = scale.x > 0 ? 3 : -3;
+        if (context.started && Ntochas < 30)
+        {
+            
+                Instantiate(tocha, new Vector3(this.transform.position.x + a, this.transform.position.y), Quaternion.identity);
+                Ntochas++;
+            
+        }
+    }
     public void SetMarchaQ(InputAction.CallbackContext context)
     {
         if (context.started)

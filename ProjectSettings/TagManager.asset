@@ -9,6 +9,9 @@ TagManager:
   - Placar
   - Toupeira
   - Chaleira
+  - Spawn
+  - BackGround
+  - Tocha
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Ground
   - Wall
   - Player
-  - 
+  - Tocha
   - 
   - 
   - 
