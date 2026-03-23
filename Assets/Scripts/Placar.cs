@@ -10,7 +10,7 @@ public class Placar : MonoBehaviour
 {
     public int cafe;
     public Player player;
-    public int points = 0;
+    public int points = 1000;
     public int pontosTime;
     public float time = 60f;
 
@@ -28,11 +28,11 @@ public class Placar : MonoBehaviour
         }
         
     }
-    public void coletaCafe()
+    public void coletaCafe(int quantidade)
     {
         cafe++;
         pontosTime++;
-        points = +500;
+        points += quantidade;
     }
 
 }

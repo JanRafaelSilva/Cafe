@@ -257,7 +257,6 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
-
     void Broca()
     {
         if (broca)

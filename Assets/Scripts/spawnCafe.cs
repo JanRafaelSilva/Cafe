@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class SpawnChaleira : MonoBehaviour
+public class spawnCafe : MonoBehaviour
 {
-    public float time = 12f;
+    public float time = 24f;
     public GameObject a;
     public bool morte;
-
     void Start()
     {
         Instantiate(a, transform.position, Quaternion.identity);
-
     }
     public void trueSpawn(bool morte)
     {
@@ -24,7 +22,7 @@ public class SpawnChaleira : MonoBehaviour
             if (time <= 0)
             {
                 Instantiate(a, transform.position, Quaternion.identity);
-                time = 12f;
+                time = 24f;
                 morte = false;
             }
         }

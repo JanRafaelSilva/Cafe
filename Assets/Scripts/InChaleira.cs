@@ -159,9 +159,11 @@ public class InChaleira : MonoBehaviour, IDamageable
 
         if (vida <= 0)
         {
+            GameObject Placar = GameObject.FindGameObjectWithTag("Placar");
+            var control = Placar.gameObject.GetComponent<Placar>();
+            control.coletaCafe(500);
             var controle = spawn.gameObject.GetComponent<SpawnChaleira>();
             controle.trueSpawn(pode);
-            Debug.Log("passou o true");
             Die();
         }
     }
